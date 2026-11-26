@@ -1,0 +1,12 @@
+{"at":0,"kind":"definition","record":{"version":1,"steps":[{"name":"approve","kind":"signal","needs":[]},{"name":"record","kind":"effect","needs":["approve"]}]}}
+{"at":0,"kind":"definition","record":{"version":2,"steps":[{"name":"check","kind":"signal","needs":[]},{"name":"publish","kind":"signal","needs":["check"]},{"name":"attach","kind":"effect","needs":["check","publish"]}]}}
+{"at":1,"kind":"compat","record":{"from":1,"to":2,"steps":{"approve":{"step":"check","reuse":"partial","reason":"检查通过"}}}}
+{"at":2,"kind":"start","record":{"instance":"y","version":1}}
+{"at":3,"kind":"signal","record":{"instance":"y","version":1,"step":"approve","id":"s1","reason":"其他原因"}}
+{"at":4,"kind":"migrate","record":{"instance":"y","request":"m1","to":2}}
+{"at":5,"kind":"signal","record":{"instance":"y","version":1,"step":"approve","id":"s2","reason":"检查通过"}}
+{"at":6,"kind":"inspect","record":{"instance":"y"}}
+{"at":7,"kind":"signal","record":{"instance":"y","version":2,"step":"publish","id":"s3"}}
+{"at":8,"kind":"claim","record":{"instance":"y","version":2,"step":"attach","attempt":"b1"}}
+{"at":9,"kind":"settle","record":{"attempt":"b1","state":"done"}}
+{"at":10,"kind":"inspect","record":{"instance":"y"}}
