@@ -1,0 +1,9 @@
+{"at":0,"kind":"definition","record":{"version":1,"steps":[{"name":"approve","kind":"signal","needs":[]}]}}
+{"at":0,"kind":"definition","record":{"version":2,"steps":[{"name":"check","kind":"signal","needs":[]},{"name":"publish","kind":"signal","needs":["check"]}]}}
+{"at":1,"kind":"compat","record":{"from":1,"to":2,"steps":{"approve":"check"}}}
+{"at":2,"kind":"start","record":{"instance":"x","version":1}}
+{"at":3,"kind":"signal","record":{"instance":"x","version":1,"step":"approve","id":"old"}}
+{"at":4,"kind":"migrate","record":{"instance":"x","request":"m","to":2}}
+{"at":5,"kind":"signal","record":{"instance":"x","version":1,"step":"approve","id":"old"}}
+{"at":6,"kind":"inspect","record":{"instance":"x"}}
+{"at":7,"kind":"signal","record":{"instance":"x","version":2,"step":"publish","id":"new"}}

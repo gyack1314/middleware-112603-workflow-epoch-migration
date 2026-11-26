@@ -1,0 +1,11 @@
+[
+  "claim",
+  "compat",
+  "definition",
+  "inspect",
+  "migrate",
+  "restart",
+  "settle",
+  "signal",
+  "start"
+]

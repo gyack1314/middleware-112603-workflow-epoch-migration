@@ -1,0 +1,11 @@
+{"at":0,"kind":"definition","record":{"version":1,"steps":[{"name":"record","kind":"effect","needs":[]}]}}
+{"at":0,"kind":"definition","record":{"version":2,"steps":[{"name":"attach","kind":"effect","needs":[]}]}}
+{"at":1,"kind":"compat","record":{"from":1,"to":2,"steps":{}}}
+{"at":2,"kind":"start","record":{"instance":"x","version":1}}
+{"at":3,"kind":"claim","record":{"instance":"x","version":1,"step":"record","attempt":"a"}}
+{"at":4,"kind":"migrate","record":{"instance":"x","request":"one","to":2}}
+{"at":5,"kind":"migrate","record":{"instance":"x","request":"two","to":2}}
+{"at":6,"kind":"settle","record":{"attempt":"a","state":"unknown"}}
+{"at":7,"kind":"restart","record":{}}
+{"at":8,"kind":"settle","record":{"attempt":"a","state":"done"}}
+{"at":9,"kind":"inspect","record":{"instance":"x"}}
